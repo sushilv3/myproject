@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(233, 209, 173);
+}
+
+.message {
+    background-color: teal;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    margin: 16 auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: 0.8;
+}
+
+.newcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.container {
+    background-color: white;
+    padding: 16px;
+}
+
+.hor-center {
+    position: relative;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.spacebetween {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.padding {
+    padding: 16px;
+}

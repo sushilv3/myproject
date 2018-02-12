@@ -1,0 +1,112 @@
+:root {
+    --pri-clr: #4caf50;
+    --pri-clr-light: #80e27e;
+    --pri-clr-dark: #087f23;
+    --pri-text: rgba(0, 0, 0, 0.8);
+    --sec-clr: #b0bec5;
+    --sec-clr-light: #e2f1f8;
+    --sec-clr-dark: #808e95;
+    --sec-text: #000000;
+    --margin-right: 16px;
+    --header-height: 50px;
+    --background-color: #f1f1f1;
+    --side-nav-width: 20%;
+    --content-padding: 8px;
+    --card-bg-clr: #ffff;
+}
+
+body {
+    background-color: var(--background-color)!important;
+}
+
+button,
+input[type=button],
+input[type=submit],
+input[type=text],
+input[type=password],
+a {
+    min-height: 48px;
+    min-width: 48px;
+    cursor: pointer;
+}
+
+button,
+input[type=button],
+input[type=submit],
+a {
+    padding: 0 8px;
+}
+
+form input[type="text"],
+input[type=password] {
+    margin-bottom: 16px;
+    padding-left: 16px;
+}
+
+button {
+    border: 1px solid inherit;
+}
+
+.btn-grp {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* background-color: red; */
+}
+
+.btn-con {
+    width: 40%;
+    margin-left: auto;
+}
+
+.btn-grp button {
+    flex-grow: 1;
+    /*border: none;*/
+}
+
+.btn-grp button:nth-child(odd) {
+    /*border-right: 0 solid inherit;*/
+    /* border-right-width: 0; */
+}
+
+button.primary {
+    background-color: var(--pri-clr-light);
+    border: 1px solid var(--pri-clr);
+    /* margin-left: 8px; */
+    margin: 2px;
+}
+
+button.primary:hover {
+    /*background-color: var(--pri-clr-light);*/
+    background-color: white;
+    color: var(--pri-clr-dark);
+    /*border: 1px solid var(--pri-clr);*/
+}
+
+.card {
+    padding: 16px;
+    box-shadow: 0 1px 2px 1px var(--sec-clr);
+    /* box-sizing: border-box; */
+}
+
+.only-cardshow {
+    box-shadow: 0 1px 2px 1px var(--sec-clr);
+}
+
+.a-link {
+    display: block;
+    text-decoration: none;
+    line-height: 48px;
+    text-align: center;
+}
+
+.sideshopkeeper-link {
+    display: block;
+    text-decoration: none;
+    line-height: 48px;
+    /* text-align: center; */
+}
+
+button.secondary {}
+
+button.secondary:hover {}
