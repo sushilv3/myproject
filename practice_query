@@ -1,0 +1,62 @@
+// create table which name in employee
+CREATE TABLE employee (id int AUTO_INCREMENT PRIMARY KEY, name varchar(256), address varchar(256), designation varchar(256), salary int(6))
+
+// rename table name
+RENAME TABLE employee to employees;
+
+//insert values into table (insert single record)
+INSERT INTO employees (name, address, designation, salary) VALUES ('sunil','naini','tl',30000)
+
+//insert multiple records
+INSERT INTO employees (name, address, designation, salary) VALUES ('santosh','mz','supervisop',15000),
+																  ('sushil','lko','atl',20000),
+                                                                  ('rakesh','gz','tl',29000),
+                                                                  ('manish','lko','atl',18000),
+                                                                  ('suresh','naini','supervisop',16000);
+
+
+													Queries
+1.SELECT * FROM employees where address = "lko"
+2.SELECT name, address from employees where salary = 20000
+3.SELECT name, address, salary from employees where address = 'lko'
+//find max salary 
+4.SELECT * from employees ORDER BY salary desc LIMIT 1
+ SELECT name, designation, salary from employees ORDER BY salary desc LIMIT 1
+// two records after first one = limit <after>,<number of records>
+5.SELECT name, designation, salary from employees ORDER BY salary desc LIMIT 1,2
+// fetch record who have salary between 20000 and 30000 (between candition shoulde be assending order )
+6.SELECT name, designation, salary FROM employees WHERE salary BETWEEN 20000 and 30000
+
+//add status column in table with default value
+7.ALTER TABLE employees ADD COLUMN active tinyint(1) DEFAULT 1
+
+//drop column
+ALTER TABLE employees DROP COLUMN status
+
+
+			//						Create New Table id(primary key) and emp_id (foreign key)
+CREATE TABLE emp_client (id int AUTO_INCREMENT PRIMARY KEY, emp_id int, name varchar(256), address varchar(256), phone int(10), FOREIGN KEY (emp_id) REFERENCES employees(id))
+
+//insert record 
+INSERT INTO emp_client (emp_id, name, address, phone) VALUES(2,'atul','lko',852369741),
+															(1,'alok','sitapur',1478523690),
+															(6,'alkesh','kanpur',258960147),
+															(5,'prince','allahabad',1598623170),
+															(3,'aryan','unnao',0123654789),
+															(4,'alka','delhi',1023654758),
+															(6,'ayushi','lko',362014759),
+															(5,'monika','noida',236014587),
+															(4,'pooja','banglore',321452369),
+															(3,'manisha','sitapur',287563214),
+															(2,'priya','kanpur',951235471),
+															(1,'neha','allahabad',2103654789),
+//full outer join or full join (on or matching criteria is missing)
+8.SELECT * FROM employee JOIN emp_clien
+
+//inner join
+9.SELECT * FROM emp_client INNER JOIN employees ON emp_client.emp_id=employees.id WHERE employees.name ="sunil"
+
+//fetch those client name address whose emplyee name "sunil "(WHERE CLOUSE)
+10.SELECT emp_client.name,emp_client.address,employees.name FROM emp_client INNER JOIN employees ON emp_client.emp_id=employees.id WHERE employees.name ="sunil"
+
+
