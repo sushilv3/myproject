@@ -5,7 +5,7 @@ function factorial($num)
     $temp = 1;
     for ($i = 1; $i <= $num; ++$i) {
         $temp = $i * $temp;
-    }
+              }
 
     return $temp;
 }
